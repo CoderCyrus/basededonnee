@@ -1,0 +1,4 @@
+CREATE KEYSPACE merigold WITH REPLICATION = { 'class' :'SimpleStrategy', 'replication_factor' :1 };
+
+CREATE TABLE camion ( camion_id text, heure timestamp, gps_x double, gps_y double, primary key(camion_id, heure)) ;
+CREATE TABLE position ( heure timestamp, camion_id text, gps_x double, gps_y double, primary key(heure, camion_id)) ;
